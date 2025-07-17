@@ -3,7 +3,7 @@
 return [
 'database'=>[
     'host' =>'localhost',
-    'dbname'=>'',
+    'dbname'=>'e_commerce',
     'charset'=>'utf8mb4'
 ]
 ];

@@ -1,7 +1,5 @@
 <?php
 
-use Core\Response;
-
 function dd($data)
 {
     echo '<pre>';
@@ -10,10 +8,6 @@ function dd($data)
     die();
 }
 
-function uriIs($uri)
-{
-    return $uri == $_SERVER['REQUEST_URI'];
-}
 
 function authorize($condition, $status = 403)
 {

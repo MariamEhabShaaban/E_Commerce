@@ -8,7 +8,7 @@ class Database{
     public $st;
     public function __construct($config,$username='root',$password=''){
         
-       
+       // "host=localhost;dbname=ecommerce;charset=utf8"
         $dsn="mysql:".http_build_query($config,'',';');
 
         $options=array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION); 
