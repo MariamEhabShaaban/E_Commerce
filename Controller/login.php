@@ -1,2 +1,4 @@
 <?php
-dd('hello login');
+
+
+require view('login.view.php');

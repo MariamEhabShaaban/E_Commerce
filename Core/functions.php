@@ -113,3 +113,8 @@ function check_expire($time){
     return $time <time();
 }
 
+ function valid($data){
+    return strlen($data)>0;
+
+}
+

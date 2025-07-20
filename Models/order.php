@@ -2,8 +2,6 @@
 
 namespace Models;
 
-class Item_model{
-
+class Order{
     
-
 }
