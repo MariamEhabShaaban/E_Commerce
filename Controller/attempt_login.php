@@ -37,6 +37,7 @@ if (empty($errors)) {
 
     // login successful
     $_SESSION['user'] = $email;
+    $_SESSION['role']=$user['role'];
     redirect('/home');
   
 }

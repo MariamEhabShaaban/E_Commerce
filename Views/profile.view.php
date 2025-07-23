@@ -6,7 +6,7 @@ require view('partials/nav.php');
 ?>
 
 <div class="flex justify-center items-center min-h-screen bg-gray-100 px-4">
-  <div class="bg-white shadow-xl rounded-2xl p-10 text-center max-w-md w-full">
+  <div class="bg-white shadow-xl rounded-2xl p-10 text-center max-w-2lg w-full">
     <h1 class="text-3xl font-bold text-blue-600 mb-4">
       Hello, <?= htmlspecialchars($email) ?> 👋
     </h1>

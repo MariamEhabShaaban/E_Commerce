@@ -14,7 +14,7 @@ class Users{
         $user = $this->db->query('SELECT * FROM users WHERE email=? ',[$email])->find();
         if($user){
             $pass =password_verify($password,$user['password']);
-            if($pass)return true;
+            if($pass)return $user;
             else{
                 $this->errors['password']= 'Incorrect Password';
                 return false;
@@ -33,7 +33,7 @@ class Users{
     public function add_user($email,$password){
         //hashing password
         $password = password_hash($password,PASSWORD_DEFAULT);
-        $user = $this->db->query('INSERT INTO users (email,password) VALUES(?,?)',[$email,$password]);
+        $user = $this->db->query('INSERT INTO users (email,password,role) VALUES(?,?,?)',[$email,$password,'user']);
         return $user?true:false;
 
     }
