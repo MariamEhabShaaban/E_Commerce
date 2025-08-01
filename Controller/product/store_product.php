@@ -3,7 +3,7 @@
 use Core\Database;
 use Models\Product;
 
-
+if(isset($_SESSION['user']) && $_SESSION['role']=='admin'){
 // load configuration and database connection
 $config = require base_path('config.php');
 $db = new Database($config['database']);
@@ -45,4 +45,7 @@ if (valid($name) && valid($price) && valid($image) ) {
 redirect('/home');
 
 
-
+}else{
+    abort(403);
+    exit;
+}

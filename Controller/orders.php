@@ -3,6 +3,8 @@ use Core\Database;
 
 use Models\Order;
 
+if(isset($_SESSION['user']) && $_SESSION['role']=='user'){
+
 // load configuration and database connection
 $config = require base_path('config.php');
 $db = new Database($config['database']);
@@ -20,3 +22,8 @@ $orders = $order->get_orders($user_id);
 require view('order.view.php',[
     'orders'=>$orders
 ]);
+}
+else{
+    abort(403);
+    exit;
+}

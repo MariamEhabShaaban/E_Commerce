@@ -1,7 +1,7 @@
 <?php
 use Core\Database;
 use Models\Cart;
-use Models\Users;
+if(isset($_SESSION['user']) && $_SESSION['role']=='user'){
 // load configuration and database connection
 $config = require base_path('config.php');
 $db = new Database($config['database']);
@@ -14,3 +14,7 @@ require view('cart.view.php',[
     'cartItems'=>$cartItems,
     'total'=>$total
 ]);
+}else{
+    abort(403);
+    exit;
+}

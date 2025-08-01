@@ -2,6 +2,7 @@
 use Core\Database;
 use Models\Cart;
 use Models\Product;
+if(isset($_SESSION['user']) && $_SESSION['role']=='user'){
 $id = $_POST['product_id'];
 // load configuration and database connection
 $config = require base_path('config.php');
@@ -18,6 +19,10 @@ $add_to = $cart->addTo_cart($product['name'] , $product['price'],$_SESSION['id']
 // add to cart
 
 redirect('/home');
+}else{
+    abort(403);
+    exit;
+}
 
 
 
