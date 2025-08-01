@@ -7,6 +7,7 @@
       <a href="#" class="text-xl font-bold text-blue-600">E_Commerce</a>
       <?php if(isset($_SESSION['user']) &&$_SESSION['role']!='admin' ):?>
         <a href="/cart" class="hover:text-blue-500 font-medium">Cart</a>
+         <a href="/Myorders" class="hover:text-blue-500 font-medium">My orders</a>
       <?php endif?>
     </div>
 
